@@ -1,0 +1,144 @@
+/usr/local/bin/python3.12 /Users/jakebaker/PycharmProjects/MSDS_460_Transhipment/scheduling.py
+['A', 'B', 'C', 'D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'E', 'F', 'G', 'H']
+{'A': [], 'B': ['A'], 'C': ['A'], 'D1': ['A'], 'D2': ['D1'], 'D3': ['D1'], 'D4': ['D2', 'D3'], 'D5': ['D4'], 'D6': ['D4'], 'D7': ['D6'], 'D8': ['D5', 'D7'], 'E': ['B', 'C'], 'F': ['D8', 'E'], 'G': ['A', 'D8'], 'H': ['F', 'G']}
+{'A': {'best': 2.0, 'expected': 4.0, 'worst': 8.0}, 'B': {'best': 8.0, 'expected': 12.0, 'worst': 16.0}, 'C': {'best': 3.0, 'expected': 5.0, 'worst': 8.0}, 'D1': {'best': 10.0, 'expected': 15.0, 'worst': 20.0}, 'D2': {'best': 15.0, 'expected': 20.0, 'worst': 25.0}, 'D3': {'best': 16.0, 'expected': 24.0, 'worst': 32.0}, 'D4': {'best': 40.0, 'expected': 60.0, 'worst': 80.0}, 'D5': {'best': 8.0, 'expected': 12.0, 'worst': 16.0}, 'D6': {'best': 16.0, 'expected': 24.0, 'worst': 32.0}, 'D7': {'best': 24.0, 'expected': 36.0, 'worst': 48.0}, 'D8': {'best': 4.0, 'expected': 8.0, 'worst': 12.0}, 'E': {'best': 12.0, 'expected': 18.0, 'worst': 24.0}, 'F': {'best': 8.0, 'expected': 12.0, 'worst': 16.0}, 'G': {'best': 16.0, 'expected': 24.0, 'worst': 32.0}, 'H': {'best': 8.0, 'expected': 12.0, 'worst': 16.0}}
+Welcome to the CBC MILP Solver
+Version: 2.10.3
+Build Date: Dec 15 2019
+
+command line - /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pulp/solverdir/cbc/osx/64/cbc /var/folders/1t/c6m72xj55t378rg_t_y227n00000gn/T/4f97af2b11084073978f7f2f2f494ff4-pulp.mps -timeMode elapsed -branch -printingOptions all -solution /var/folders/1t/c6m72xj55t378rg_t_y227n00000gn/T/4f97af2b11084073978f7f2f2f494ff4-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 25 COLUMNS
+At line 68 RHS
+At line 89 BOUNDS
+At line 90 ENDATA
+Problem MODEL has 20 rows, 15 columns and 40 elements
+Coin0008I MODEL read with 0 errors
+Option for timeMode changed from cpu to elapsed
+Presolve 0 (-20) rows, 0 (-15) columns and 0 (-40) elements
+Empty problem - 0 rows, 0 columns and 0 elements
+Optimal - objective value 128
+After Postsolve, objective 128, infeasibilities - dual 0 (0), primal 0 (0)
+Optimal objective 128 - 0 iterations time 0.002, Presolve 0.00
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.00   (Wallclock seconds):       0.00
+
+--- BEST CASE ---
+Status: Optimal
+Optimal project schedule:
+A: Start Time = 0.0
+B: Start Time = 100.0
+C: Start Time = 105.0
+D1: Start Time = 2.0
+D2: Start Time = 13.0
+D3: Start Time = 12.0
+D4: Start Time = 28.0
+D5: Start Time = 100.0
+D6: Start Time = 68.0
+D7: Start Time = 84.0
+D8: Start Time = 108.0
+E: Start Time = 108.0
+F: Start Time = 120.0
+G: Start Time = 112.0
+H: Start Time = 128.0
+Makespan (Total Project Time) = 136.0
+
+Critical Path:
+['A', 'D1', 'D3', 'D4', 'D6', 'D7', 'D8', 'E', 'F', 'G', 'H']
+
+
+Welcome to the CBC MILP Solver
+Version: 2.10.3
+Build Date: Dec 15 2019
+
+command line - /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pulp/solverdir/cbc/osx/64/cbc /var/folders/1t/c6m72xj55t378rg_t_y227n00000gn/T/84ae6a78f9d748a1b289c8eb0861fbf2-pulp.mps -timeMode elapsed -branch -printingOptions all -solution /var/folders/1t/c6m72xj55t378rg_t_y227n00000gn/T/84ae6a78f9d748a1b289c8eb0861fbf2-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 25 COLUMNS
+At line 68 RHS
+At line 89 BOUNDS
+At line 90 ENDATA
+Problem MODEL has 20 rows, 15 columns and 40 elements
+Coin0008I MODEL read with 0 errors
+Option for timeMode changed from cpu to elapsed
+Presolve 0 (-20) rows, 0 (-15) columns and 0 (-40) elements
+Empty problem - 0 rows, 0 columns and 0 elements
+Optimal - objective value 195
+After Postsolve, objective 195, infeasibilities - dual 0 (0), primal 0 (0)
+Optimal objective 195 - 0 iterations time 0.002, Presolve 0.00
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.00   (Wallclock seconds):       0.00
+
+--- EXPECTED CASE ---
+Status: Optimal
+Optimal project schedule:
+A: Start Time = 0.0
+B: Start Time = 153.0
+C: Start Time = 160.0
+D1: Start Time = 4.0
+D2: Start Time = 23.0
+D3: Start Time = 19.0
+D4: Start Time = 43.0
+D5: Start Time = 151.0
+D6: Start Time = 103.0
+D7: Start Time = 127.0
+D8: Start Time = 163.0
+E: Start Time = 165.0
+F: Start Time = 183.0
+G: Start Time = 171.0
+H: Start Time = 195.0
+Makespan (Total Project Time) = 207.0
+
+Critical Path:
+['A', 'D1', 'D3', 'D4', 'D6', 'D7', 'D8', 'E', 'F', 'G', 'H']
+
+
+Welcome to the CBC MILP Solver
+Version: 2.10.3
+Build Date: Dec 15 2019
+
+command line - /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pulp/solverdir/cbc/osx/64/cbc /var/folders/1t/c6m72xj55t378rg_t_y227n00000gn/T/cc191fb8383e46aca99a315cdfe584ec-pulp.mps -timeMode elapsed -branch -printingOptions all -solution /var/folders/1t/c6m72xj55t378rg_t_y227n00000gn/T/cc191fb8383e46aca99a315cdfe584ec-pulp.sol (default strategy 1)
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 25 COLUMNS
+At line 68 RHS
+At line 89 BOUNDS
+At line 90 ENDATA
+Problem MODEL has 20 rows, 15 columns and 40 elements
+Coin0008I MODEL read with 0 errors
+Option for timeMode changed from cpu to elapsed
+Presolve 0 (-20) rows, 0 (-15) columns and 0 (-40) elements
+Empty problem - 0 rows, 0 columns and 0 elements
+Optimal - objective value 264
+After Postsolve, objective 264, infeasibilities - dual 0 (0), primal 0 (0)
+Optimal objective 264 - 0 iterations time 0.002, Presolve 0.00
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.00   (Wallclock seconds):       0.00
+
+--- WORST CASE ---
+Status: Optimal
+Optimal project schedule:
+A: Start Time = 0.0
+B: Start Time = 208.0
+C: Start Time = 216.0
+D1: Start Time = 8.0
+D2: Start Time = 35.0
+D3: Start Time = 28.0
+D4: Start Time = 60.0
+D5: Start Time = 204.0
+D6: Start Time = 140.0
+D7: Start Time = 172.0
+D8: Start Time = 220.0
+E: Start Time = 224.0
+F: Start Time = 248.0
+G: Start Time = 232.0
+H: Start Time = 264.0
+Makespan (Total Project Time) = 280.0
+
+Critical Path:
+['A', 'D1', 'D3', 'D4', 'D6', 'D7', 'D8', 'E', 'F', 'G', 'H']
+
+
+
+Process finished with exit code 0
